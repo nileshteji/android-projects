@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="257dp"
+        android:layout_height="140dp"
+        android:text="Click"
+       />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="346dp"
+        android:layout_height="68dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="enter name"
+      />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="339dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:hint="email"/>
+
+    <EditText
+        android:id="@+id/editText4"
+        android:layout_width="334dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="phone"
+         android:hint="phone"/>
+
+    <EditText
+        android:id="@+id/editText5"
+        android:layout_width="329dp"
+        android:layout_height="56dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:hint="password"/>
+
+    <EditText
+        android:id="@+id/editText6"
+        android:layout_width="329dp"
+        android:layout_height="61dp"
+
+        android:hint="confirm"
+        android:inputType="textPassword" />
+
+    <!--android:text="Name"-->
+        tools:layout_editor_absoluteX="42dp"
+        tools:layout_editor_absoluteY="257dp" />
+
+</LinearLayout>
