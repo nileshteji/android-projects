@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -18,14 +20,12 @@ public class MainActivity extends AppCompatActivity {
 //
         NileshViewModel viewModel=ViewModelProviders.of(this).get(NileshViewModel.class);
 
-        viewModel.getData().observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(String s) {
-                Toast.makeText(MainActivity.this, s, Toast.LENGTH_SHORT).show();
-            }
-        });
-
-
+     viewModel.getData().observe(this, new Observer<List<String>>() {
+         @Override
+         public void onChanged(List<String> strings) {
+             
+         }
+     });
 
 
 

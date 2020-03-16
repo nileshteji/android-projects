@@ -5,16 +5,19 @@ import android.database.Observable;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class NileshViewModel extends ViewModel {
 
-   MutableLiveData<String> obj=new MutableLiveData<>();
+   MutableLiveData<List<String>> obj=new MutableLiveData<>();
 
    public  NileshViewModel(String name){
-        obj.setValue(name);
+        obj.setValue(new ArrayList<String>());
     }
 
 
-    public MutableLiveData<String> getData(){
+    public MutableLiveData<List<String>> getData(){
         return obj;
     }
 
