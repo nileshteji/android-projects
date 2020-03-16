@@ -10,15 +10,15 @@ import java.util.List;
 
 public class NileshViewModel extends ViewModel {
 
-   MutableLiveData<List<String>> obj=new MutableLiveData<>();
-
-   public  NileshViewModel(String name){
-        obj.setValue(new ArrayList<String>());
-    }
+   MutableLiveData<String> obj=new MutableLiveData<>();
 
 
-    public MutableLiveData<List<String>> getData(){
-        return obj;
+
+    public MutableLiveData<String> getData(){
+        obj.setValue("Nilesh Teji ");
+        return  obj;
+
+
     }
 
 

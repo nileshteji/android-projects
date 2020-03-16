@@ -17,16 +17,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//
-        NileshViewModel viewModel=ViewModelProviders.of(this).get(NileshViewModel.class);
-
-     viewModel.getData().observe(this, new Observer<List<String>>() {
-         @Override
-         public void onChanged(List<String> strings) {
-             
-         }
-     });
-
+       NileshViewModel viewModel=ViewModelProviders.of(this).get(NileshViewModel.class);
+ viewModel.getData().observe(this, new Observer<String>() {
+     @Override
+     public void onChanged(String s) {
+         Toast.makeText(MainActivity.this,s,Toast.LENGTH_SHORT).show();
+     }
+ });
 
 
     }
