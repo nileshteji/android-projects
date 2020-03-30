@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">LoginSignUp</string>
+    <string name="by_signing_up_you_agree_to_t_c"><![CDATA[By Signing Up,you agree to T&C]]></string>
+</resources>

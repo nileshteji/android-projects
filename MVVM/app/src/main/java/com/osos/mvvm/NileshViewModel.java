@@ -14,9 +14,12 @@ public class NileshViewModel extends ViewModel {
 
 
 
+
     public MutableLiveData<String> getData(){
+
         obj.setValue("Nilesh Teji ");
         return  obj;
+
 
 
     }

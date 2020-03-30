@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
        NileshViewModel viewModel=ViewModelProviders.of(this).get(NileshViewModel.class);
  viewModel.getData().observe(this, new Observer<String>() {
      @Override

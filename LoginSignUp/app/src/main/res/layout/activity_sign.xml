@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+
+    tools:context=".Sign">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="449dp"
+
+        android:layout_height="298dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints">
+
+
+        <ImageView
+            android:layout_width="453dp"
+            android:layout_height="308dp"
+            android:foreground="@drawable/imageround1"
+            android:src="@drawable/nilesh1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></ImageView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <EditText
+
+        android:inputType="phone"
+        android:id="@+id/editText"
+        android:layout_width="320dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="72dp"
+        android:background="@drawable/round"
+        android:hint="Mobile No."
+        android:paddingStart="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"></EditText>
+
+    <Button
+        android:id="@+id/buttonSign"
+        android:layout_width="47dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/imageround"
+        android:foreground="@drawable/ic_arrow_forward_black_24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.871"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText"></Button>
+
+    <TextView
+        android:id="@+id/sognup"
+        android:layout_width="271dp"
+        android:layout_height="34dp"
+
+        android:layout_marginTop="120dp"
+        android:fontFamily="@font/fruktur"
+        android:text="New User? Sign Up"
+        android:textAlignment="center"
+
+        android:textColor="#EEE"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="271dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="248dp"
+
+        android:fontFamily="@font/fruktur"
+        android:text="@string/by_signing_up_you_agree_to_t_c"
+        android:textAlignment="center"
+        android:textColor="#EEE"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText">
+
+    </TextView>
+</androidx.constraintlayout.widget.ConstraintLayout>
