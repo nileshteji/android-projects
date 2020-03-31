@@ -25,9 +25,20 @@ EditText mobile;
         verify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent obj=new Intent(Sign.this,Otp.class);
-                obj.putExtra("Value",mobile.getText().toString());
-                startActivity(obj);
+
+
+                if(mobile.getText().equals("")|| mobile.length() < 10 || mobile.length() >10){
+                  mobile.setError("Enter a valid mobile");
+                  mobile.requestFocus();
+                    return;
+                }
+                else {
+
+
+                    Intent obj = new Intent(Sign.this, Otp.class);
+                    obj.putExtra("Value", mobile.getText().toString());
+                    startActivity(obj);
+                }
 
             }
         });

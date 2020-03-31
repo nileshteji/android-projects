@@ -11,39 +11,28 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
-        android:layout_width="449dp"
-
-        android:layout_height="298dp"
+        android:layout_width="410dp"
+        android:layout_height="294dp"
+        android:background="@drawable/nilesh1"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints">
-
-
-        <ImageView
-            android:layout_width="453dp"
-            android:layout_height="308dp"
-            android:foreground="@drawable/imageround1"
-            android:src="@drawable/nilesh1"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"></ImageView>
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="-4dp" />
 
     <EditText
 
-        android:inputType="phone"
         android:id="@+id/editText"
         android:layout_width="320dp"
         android:layout_height="46dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="40dp"
         android:background="@drawable/round"
         android:hint="Mobile No."
+        android:inputType="phone"
         android:paddingStart="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout"></EditText>
 
@@ -64,7 +53,7 @@
         android:layout_width="271dp"
         android:layout_height="34dp"
 
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="128dp"
         android:fontFamily="@font/fruktur"
         android:text="New User? Sign Up"
         android:textAlignment="center"
