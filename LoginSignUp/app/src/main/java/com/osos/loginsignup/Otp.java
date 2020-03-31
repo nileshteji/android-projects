@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,6 +33,7 @@ public class Otp extends AppCompatActivity {
 Toolbar toolbar;
 TextView details,otpError,resendOtp;
 EditText otp;
+ProgressBar progressBar;
 FirebaseAuth mAuth;
 String mVerify;
 
@@ -43,10 +45,12 @@ PhoneAuthProvider.ForceResendingToken forceResendingToken;
         setContentView(R.layout.activity_otp);
         toolbar=findViewById(R.id.toolbar2);
         details=findViewById(R.id.textView4);
+        progressBar=findViewById(R.id.progressBar3);
         getSupportActionBar();
         submit=findViewById(R.id.submit);
         otp=findViewById(R.id.editText5);
         resendOtp=findViewById(R.id.textView5);
+
 
 
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back_black_24dp);
@@ -133,6 +137,8 @@ PhoneAuthProvider.ForceResendingToken forceResendingToken;
         @Override
         public void onCodeSent(@NonNull String verificationId,
                 @NonNull PhoneAuthProvider.ForceResendingToken token) {
+            progressBar.setVisibility(View.INVISIBLE);
+            otp.setVisibility(View.VISIBLE);
             Log.d("Value", "onCodeSent:" + verificationId);
             mVerify=verificationId;
             forceResendingToken=token;
