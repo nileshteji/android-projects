@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">LoginSignUp</string>
     <string name="by_signing_up_you_agree_to_t_c"><![CDATA[By Signing Up,you agree to T&C]]></string>
+    <string name="detail">
+        You must be thinkin why have been logged in without getting the otp actually this a feature of
+        firebase which automatically logs in the mobile number which you are using .
+        Want to verify Click the log out button and try a number which is not yours
+
+    </string>
 </resources>

@@ -57,7 +57,9 @@ PhoneAuthProvider.ForceResendingToken forceResendingToken;
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                   Intent obj=new Intent(Otp.this,Sign.class);
+                   obj.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                   startActivity(obj);
             }
         });
         final Intent intent=getIntent();
@@ -96,6 +98,8 @@ PhoneAuthProvider.ForceResendingToken forceResendingToken;
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                progressBar.setVisibility(View.VISIBLE);
+                otp.setVisibility(View.INVISIBLE);
                 PhoneAuthCredential credential=PhoneAuthProvider.getCredential(mVerify,otp.getText().toString());
                 signInWithPhoneAuthCredential(credential);
             }
@@ -114,14 +118,9 @@ PhoneAuthProvider.ForceResendingToken forceResendingToken;
 
         @Override
         public void onVerificationCompleted(PhoneAuthCredential credential) {
-            String code = credential.getSmsCode();
 
-
-            if (code != null) {
-                otp.setText(code);
-          PhoneAuthCredential phoneAuthCredential=PhoneAuthProvider.getCredential(mVerify,code);
-          signInWithPhoneAuthCredential(phoneAuthCredential);
-            }
+            Log.e("onVerification",credential.toString());
+            signInWithPhoneAuthCredential(credential);
 
 
         }
@@ -156,11 +155,15 @@ PhoneAuthProvider.ForceResendingToken forceResendingToken;
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful())
-                            Toast.makeText(Otp.this, "Welcome", Toast.LENGTH_SHORT).show();
+                        if (task.isSuccessful()) {
+                            progressBar.setVisibility(View.INVISIBLE);
+                            startActivity(new Intent(Otp.this, Content.class));
+                        }
 
 
                         else {
+                            progressBar.setVisibility(View.INVISIBLE);
+                            otp.setVisibility(View.VISIBLE);
                             if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
                             otpError.setVisibility(View.VISIBLE);
                         }
