@@ -40,7 +40,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.Holder>  {
 
     @Override
     public int getItemCount() {
-        return 1;
+        return personList.size();
     }
 
     class Holder extends RecyclerView.ViewHolder{

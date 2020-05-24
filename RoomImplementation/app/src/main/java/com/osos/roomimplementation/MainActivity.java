@@ -20,7 +20,7 @@ import java.util.concurrent.Executor;
 public class MainActivity extends AppCompatActivity {
 ActivityMainBinding mainBinding;
 List<Person> list;
-String a="Nilesh",b="Teji";
+
 int index=0;
 
     @Override
@@ -35,7 +35,7 @@ int index=0;
         mainBinding.addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                new insert().execute(new Person(0,"Nilesh","Teji"));
 
             }
         });
@@ -73,6 +73,7 @@ int index=0;
 
         @Override
         protected Void doInBackground(Person... people) {
+            list.add(people[0]);
             PersonDatabase personDatabase=PersonDatabase.getInstance(getApplicationContext());
             personDatabase.personDao().insert(people[0]);
             return null;
@@ -81,7 +82,11 @@ int index=0;
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
-            new Adapter(getApplicationContext(),list).notifyDataSetChanged();
+
+            mainBinding.recycler.setAdapter(new Adapter(getApplicationContext(),list));
+            LinearLayoutManager linearLayoutManager=new LinearLayoutManager(getApplicationContext());
+            linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+            mainBinding.recycler.setLayoutManager(linearLayoutManager);
 
         }
     }
