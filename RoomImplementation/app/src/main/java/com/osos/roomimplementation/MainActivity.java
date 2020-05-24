@@ -2,7 +2,9 @@ package com.osos.roomimplementation;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
@@ -83,10 +85,8 @@ int index=0;
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
 
-            mainBinding.recycler.setAdapter(new Adapter(getApplicationContext(),list));
-            LinearLayoutManager linearLayoutManager=new LinearLayoutManager(getApplicationContext());
-            linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-            mainBinding.recycler.setLayoutManager(linearLayoutManager);
+            new Adapter(getApplicationContext(),list).notifyDataSetChanged();
+            Toast.makeText(MainActivity.this, String.valueOf(list.size()), Toast.LENGTH_SHORT).show();
 
         }
     }
