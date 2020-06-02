@@ -1,54 +1,28 @@
 package com.osos.rxjavausingretrofit;
 
+import com.google.gson.annotations.SerializedName;
+
 public class User {
-String status;
-EmbeddedData data;
+String userid;
+String id;
+String title;
+String completed;
 
-    public User(String status, EmbeddedData data) {
-        this.status = status;
-        this.data = data;
-    }
-
-    public User() {
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public EmbeddedData getData() {
-        return data;
-    }
-
-    public void setData(EmbeddedData data) {
-        this.data = data;
-    }
-}
-
-
-
-class EmbeddedData{
-
-    String id;
-    String Name;
-    String salary;
-    String age;
-    String ProfileImage;
-
-
-    public EmbeddedData(String id, String name, String salary, String age, String profileImage) {
+    public User(String userid, String id, String title, String completed) {
+        this.userid = userid;
         this.id = id;
-        Name = name;
-        this.salary = salary;
-        this.age = age;
-        ProfileImage = profileImage;
+        this.title = title;
+        this.completed = completed;
     }
 
-    public EmbeddedData() {
+
+
+    public String getUserid() {
+        return userid;
+    }
+
+    public void setUserid(String userid) {
+        this.userid = userid;
     }
 
     public String getId() {
@@ -59,35 +33,22 @@ class EmbeddedData{
         this.id = id;
     }
 
-    public String getName() {
-        return Name;
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        Name = name;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public String getSalary() {
-        return salary;
+    public String getCompleted() {
+        return completed;
     }
 
-    public void setSalary(String salary) {
-        this.salary = salary;
-    }
-
-    public String getAge() {
-        return age;
-    }
-
-    public void setAge(String age) {
-        this.age = age;
-    }
-
-    public String getProfileImage() {
-        return ProfileImage;
-    }
-
-    public void setProfileImage(String profileImage) {
-        ProfileImage = profileImage;
+    public void setCompleted(String completed) {
+        this.completed = completed;
     }
 }
+
+
+
