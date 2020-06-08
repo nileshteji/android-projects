@@ -8,14 +8,13 @@ import androidx.room.PrimaryKey;
 public class Person {
 
 
+    @PrimaryKey(autoGenerate = true)
+    @NonNull
+    int id;
 
-@PrimaryKey(autoGenerate = true)
-@NonNull
-int id;
 
-
-String Topic;
-String Note;
+    String Topic;
+    String Note;
 
 
     public int getId() {
@@ -26,10 +25,10 @@ String Note;
         this.id = id;
     }
 
-    public Person(int id , String Topic, String Note) {
-        this.id=id;
-        this.Topic=Topic;
-        this.Note=Note;
+    public Person(int id, String Topic, String Note) {
+        this.id = id;
+        this.Topic = Topic;
+        this.Note = Note;
     }
 
     public String getTopic() {

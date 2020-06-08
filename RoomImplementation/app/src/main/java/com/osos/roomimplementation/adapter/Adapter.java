@@ -14,20 +14,20 @@ import com.osos.roomimplementation.databinding.RecyclerListBinding;
 
 import java.util.List;
 
-public class Adapter extends RecyclerView.Adapter<Adapter.Holder>  {
+public class Adapter extends RecyclerView.Adapter<Adapter.Holder> {
     Context context;
     List<Person> personList;
 
     public Adapter(Context applicationContext, List<Person> personList) {
-        this.context=applicationContext;
-        this.personList=personList;
+        this.context = applicationContext;
+        this.personList = personList;
     }
 
 
     @NonNull
     @Override
     public Holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        RecyclerListBinding recyclerListBinding= DataBindingUtil.inflate(LayoutInflater.from(context), R.layout.recycler_list,parent,false);
+        RecyclerListBinding recyclerListBinding = DataBindingUtil.inflate(LayoutInflater.from(context), R.layout.recycler_list, parent, false);
         return new Holder(recyclerListBinding);
     }
 
@@ -43,16 +43,14 @@ public class Adapter extends RecyclerView.Adapter<Adapter.Holder>  {
         return personList.size();
     }
 
-    class Holder extends RecyclerView.ViewHolder{
+    class Holder extends RecyclerView.ViewHolder {
         RecyclerListBinding recyclerListBinding;
 
         public Holder(@NonNull RecyclerListBinding recyclerListBinding) {
             super(recyclerListBinding.getRoot());
-            this.recyclerListBinding=recyclerListBinding;
+            this.recyclerListBinding = recyclerListBinding;
 
         }
-
-
 
 
     }

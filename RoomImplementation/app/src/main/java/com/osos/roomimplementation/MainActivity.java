@@ -20,43 +20,36 @@ import java.util.List;
 import java.util.concurrent.Executor;
 
 public class MainActivity extends AppCompatActivity {
-ActivityMainBinding mainBinding;
-List<Person> list;
+    ActivityMainBinding mainBinding;
+    List<Person> list;
 
-int index=0;
+    int index = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mainBinding= DataBindingUtil.setContentView(MainActivity.this,R.layout.activity_main);
+        mainBinding = DataBindingUtil.setContentView(MainActivity.this, R.layout.activity_main);
 
         new Display().execute();
-
 
 
         mainBinding.addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new insert().execute(new Person(0,"Nilesh","Teji"));
+                new insert().execute(new Person(0, "Nilesh", "Teji"));
 
             }
         });
 
 
-
-
-
-
-
-
-
     }
-    class Display extends AsyncTask<Void,Void,Void>{
+
+    class Display extends AsyncTask<Void, Void, Void> {
 
         @Override
         protected Void doInBackground(Void... voids) {
-            PersonDatabase personDatabase=PersonDatabase.getInstance(getApplicationContext());
-            list=personDatabase.personDao().getAll();
+            PersonDatabase personDatabase = PersonDatabase.getInstance(getApplicationContext());
+            list = personDatabase.personDao().getAll();
             return null;
         }
 
@@ -64,19 +57,19 @@ int index=0;
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
 
-            mainBinding.recycler.setAdapter(new Adapter(getApplicationContext(),list));
-            LinearLayoutManager linearLayoutManager=new LinearLayoutManager(getApplicationContext());
+            mainBinding.recycler.setAdapter(new Adapter(getApplicationContext(), list));
+            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
             linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
             mainBinding.recycler.setLayoutManager(linearLayoutManager);
         }
     }
 
-    class insert extends AsyncTask<Person,Void,Void>{
+    class insert extends AsyncTask<Person, Void, Void> {
 
         @Override
         protected Void doInBackground(Person... people) {
             list.add(people[0]);
-            PersonDatabase personDatabase=PersonDatabase.getInstance(getApplicationContext());
+            PersonDatabase personDatabase = PersonDatabase.getInstance(getApplicationContext());
             personDatabase.personDao().insert(people[0]);
             return null;
         }
@@ -85,7 +78,7 @@ int index=0;
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
 
-            new Adapter(getApplicationContext(),list).notifyDataSetChanged();
+            new Adapter(getApplicationContext(), list).notifyDataSetChanged();
             Toast.makeText(MainActivity.this, String.valueOf(list.size()), Toast.LENGTH_SHORT).show();
 
         }
