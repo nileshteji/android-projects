@@ -1,6 +1,7 @@
 package com.osos.paginglibrary.utils;
 
 import androidx.annotation.NonNull;
+import androidx.lifecycle.MutableLiveData;
 import androidx.paging.DataSource;
 
 import com.osos.paginglibrary.model.Details;

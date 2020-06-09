@@ -35,7 +35,7 @@ public class PageDataSource extends ItemKeyedDataSource<Integer, Details> {
                     @Override
                     public void onNext(@io.reactivex.rxjava3.annotations.NonNull List<Details> details) {
 
-                               callback.onResult(details,0,200);
+                              callback.onResult(details,0,details.size());
                     }
 
                     @Override
@@ -67,8 +67,9 @@ public class PageDataSource extends ItemKeyedDataSource<Integer, Details> {
 
                     @Override
                     public void onNext(@io.reactivex.rxjava3.annotations.NonNull List<Details> details) {
-
                         callback.onResult(details);
+
+
                     }
 
                     @Override
@@ -100,7 +101,7 @@ public class PageDataSource extends ItemKeyedDataSource<Integer, Details> {
                     @Override
                     public void onNext(@io.reactivex.rxjava3.annotations.NonNull List<Details> details) {
 
-                        callback.onResult(details);
+
                     }
 
                     @Override
