@@ -6,6 +6,11 @@ import androidx.room.Query;
 
 import java.util.List;
 
+
+
+
+import io.reactivex.rxjava3.core.Flowable;
+
 @Dao
 public interface PersonDao {
 
@@ -14,8 +19,8 @@ public interface PersonDao {
     public void insert(Person person);
 
     @Query("SELECT * FROM persons")
-    public List<Person> getAll();
-
+    public Flowable<List<Person>> getAll();
+    
 
 
 }

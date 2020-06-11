@@ -58,7 +58,7 @@ public class PageDataSource extends ItemKeyedDataSource<Integer, Details> {
 
 
         new Api().getRetrofit().create(ApiInterface.class).getSingleEmployee().toObservable().subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
+               .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<List<Details>>() {
                     @Override
                     public void onSubscribe(@io.reactivex.rxjava3.annotations.NonNull Disposable d) {
