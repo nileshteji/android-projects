@@ -1,13 +1,24 @@
 package com.arcore.dependencyinjection;
 
 import android.os.Bundle;
-import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.arcore.dependencyinjection.model.annotation;
+import com.arcore.dependencyinjection.di.Component;
+import com.arcore.dependencyinjection.di.DaggerComponent;
+
+import javax.inject.Inject;
+
+import dagger.Module;
+import dagger.Provides;
+
 
 public class MainActivity extends AppCompatActivity {
+
+
+@Inject ClassOne classOne;
+Component component;
+
 static String TAG="Main Activity";
 
     // @Module  annotation is used for the class which is providing dependencies
@@ -19,7 +30,21 @@ static String TAG="Main Activity";
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        component=DaggerComponent.create();
+        classOne=component.getUser();
+        print();
+
+
+
 
 
     }
+
+
+
+     void print(){
+        classOne.print();
+    }
+
+
 }
