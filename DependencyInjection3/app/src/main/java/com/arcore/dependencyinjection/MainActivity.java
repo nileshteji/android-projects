@@ -32,6 +32,7 @@ static String TAG="Main Activity";
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         // for this we need to inject the MainActivity
+        // This line provides us with all the injection which are there in the Module which is connected to the Component
         DaggerComponent.create().inject(MainActivity.this);
         classOne.print();
 
@@ -43,6 +44,9 @@ static String TAG="Main Activity";
 
 
 
+
+
+    /// What is DaggerComponent Doing is it is giving us all the Dependencies which are included in the Modules of the Component
 
 
 }
