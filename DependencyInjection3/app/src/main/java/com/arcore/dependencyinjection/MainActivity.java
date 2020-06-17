@@ -16,7 +16,8 @@ import dagger.Provides;
 public class MainActivity extends AppCompatActivity {
 
 
-@Inject ClassOne classOne;
+@Inject
+ClassOne classOne;
 Component component;
 
 static String TAG="Main Activity";
@@ -30,21 +31,18 @@ static String TAG="Main Activity";
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        component=DaggerComponent.create();
-        classOne=component.getUser();
-        print();
-
-
-
-
-
-    }
-
-
-
-     void print(){
+        // for this we need to inject the MainActivity
+        DaggerComponent.create().inject(MainActivity.this);
         classOne.print();
+
+
+
+
+
     }
+
+
+
 
 
 }

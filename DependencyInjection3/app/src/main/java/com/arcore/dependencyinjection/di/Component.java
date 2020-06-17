@@ -8,7 +8,7 @@ public interface Component {
 
 
 
-    ClassOne getUser();
+    void inject(MainActivity mainActivity);
 
 
 

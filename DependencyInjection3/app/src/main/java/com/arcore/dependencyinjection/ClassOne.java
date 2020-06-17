@@ -11,11 +11,13 @@ static String TAG="ClassOne";
 
     @Provides
     ClassOne getInstance(){
+
         return  new ClassOne();
     }
 
 
-    void print(){
+    void print()
+    {
         Log.d(TAG, "print: Dependency Injection");
     }
 }
