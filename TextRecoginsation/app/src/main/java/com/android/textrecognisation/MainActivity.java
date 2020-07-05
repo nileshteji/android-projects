@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onSuccess(Text text) {
                       mainBinding.textView.setText(text.getText());
-                    Log.d(TAG, "onSuccess: " + text.getTextBlocks();
+                    Log.d(TAG, "onSuccess: " + text.getTextBlocks());
                 }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
