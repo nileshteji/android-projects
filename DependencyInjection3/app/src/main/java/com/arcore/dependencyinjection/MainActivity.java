@@ -1,11 +1,17 @@
 package com.arcore.dependencyinjection;
 
 import android.os.Bundle;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.ViewModelStoreOwner;
 
 import com.arcore.dependencyinjection.di.Component;
 import com.arcore.dependencyinjection.di.DaggerComponent;
+import com.arcore.dependencyinjection.viewmodel.MyViewModel;
+import com.arcore.dependencyinjection.viewmodel.ViewModelFactory;
 
 import javax.inject.Inject;
 
@@ -18,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
 @Inject
 ClassOne classOne;
-Component component;
+MyViewModel viewModel;
 
 static String TAG="Main Activity";
 
@@ -26,16 +32,23 @@ static String TAG="Main Activity";
     // @Provide annotation is used for the Method in the Module which provides Dependencies
     // @Inject annotation is used for the class which consumes dependencies
     // @Component annotation is used for the class which connects the @Module and @Inject
-
+TextView activity;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        activity=findViewById(R.id.text);
         // for this we need to inject the MainActivity
         // This line provides us with all the injection which are there in the Module which is connected to the Component
         DaggerComponent.create().inject(MainActivity.this);
         classOne.print();
-
+        viewModel=new ViewModelProvider(MainActivity.this,new ViewModelFactory()).get(MyViewModel.class);
+        viewModel.getStringMutableLiveData().observe(this, new Observer<String>() {
+            @Override
+            public void onChanged(String s) {
+                    activity.setText(s);
+            }
+        });
 
 
 

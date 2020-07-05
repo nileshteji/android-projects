@@ -21,7 +21,7 @@ public abstract class PersonDatabase extends RoomDatabase {
     }
 
 
-    public abstract PersonDao personDao();
+    public  abstract PersonDao personDao();
 
 
 }
