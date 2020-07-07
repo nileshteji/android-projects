@@ -36,8 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
                     @Override
                     public void onNext(@NonNull String s) {
-                        Log.d("Tag", "Nilesh");
-                        mainBinding.text.setText(s);
+
                     }
 
                     @Override
@@ -50,8 +49,6 @@ public class MainActivity extends AppCompatActivity {
 
                     }
                 });
-
-
     }
 
 
