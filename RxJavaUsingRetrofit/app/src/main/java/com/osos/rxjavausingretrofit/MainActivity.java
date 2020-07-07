@@ -20,7 +20,7 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
 public class MainActivity extends AppCompatActivity {
 
     final String TAG = "MainActivity";
-    ApiBase retrofit;
+
     ActivityMainBinding mainBinding;
 
     @Override
