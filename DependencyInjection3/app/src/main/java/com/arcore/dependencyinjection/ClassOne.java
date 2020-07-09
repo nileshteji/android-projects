@@ -9,7 +9,7 @@ import dagger.Provides;
 public class ClassOne {
 static String TAG="ClassOne";
 
-       @Provides
+    @Provides
     ClassOne getInstance(){
 
         return  new ClassOne();

@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
     final String TAG = "MainActivity";
 
+
     ActivityMainBinding mainBinding;
 
     @Override
@@ -61,6 +62,12 @@ public class MainActivity extends AppCompatActivity {
                         });
             }
         });
+
+
+        mainBinding.button.setOnClickListener(view->
+
+
+                );
 
 
     }
