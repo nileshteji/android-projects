@@ -25,11 +25,13 @@ import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.core.Observer;
 import io.reactivex.rxjava3.disposables.Disposable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
+import io.reactivex.rxjava3.subjects.PublishSubject;
 
 public class MainActivity extends AppCompatActivity {
     ActivityMainBinding mainBinding;
     final String TAG = "MainActivity";
    static Observable<String> searchText;
+   int counter=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
           public boolean onQueryTextChange(String newText) {
 
               Log.d(TAG, "onQueryTextChange: " + newText);
-              search(newText);
+              search(searchText.just(newText));
               return false;
           }
       });
@@ -65,8 +67,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void search(String s){
-   Observable.just(s).subscribeOn(Schedulers.io())
+    public void search(Observable<String> s){
+
+       s.subscribeOn(Schedulers.io())
            .observeOn(AndroidSchedulers.mainThread())
            .debounce(500,TimeUnit.MILLISECONDS)
            .subscribe(new Observer<String>() {
@@ -77,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
 
                @Override
                public void onNext(@NonNull String s) {
-                   Log.d(TAG, "onNext: " + s + " debounciing Technique" );
+                  
                }
 
                @Override
