@@ -18,7 +18,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nilesh teji taheem singh "
+        android:text="nilesh teji ahe fbjhbsdbhskgs"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="220dp" />
 
@@ -26,9 +26,17 @@
         android:id="@+id/barrier"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:barrierDirection="end"
+        app:barrierDirection="right"
         app:constraint_referenced_ids="textView2,textView"
         tools:layout_editor_absoluteX="411dp"
         tools:layout_editor_absoluteY="731dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        tools:layout_editor_absoluteY="263dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
