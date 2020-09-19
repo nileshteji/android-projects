@@ -1,5 +1,8 @@
 package com.osos.kotlinapplication
 
+import android.annotation.SuppressLint
+import android.content.Context
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -23,24 +26,31 @@ class MainActivity : AppCompatActivity() {
     lateinit var main: ActivityMainBinding;
     lateinit var data:DataBaseStudent;
     lateinit var dao: StudentDao;
-    var viewModel:NileshViewModel= NileshViewModel();
     lateinit var a:Student;
+    lateinit var sharedPreferences:SharedPreferences;
+    lateinit var edit:SharedPreferences.Editor;
 
 
 
+    @SuppressLint("WrongConstant", "CommitPrefEdits")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         main=ActivityMainBinding.inflate(layoutInflater)
         setContentView(main.root)
         data= DataBaseStudent.get(applicationContext)!!
         dao=data!!.getDao();
+        sharedPreferences=getSharedPreferences("nilesh", Context.MODE_APPEND);
+        edit=sharedPreferences.edit();
+
+
+
 
 
 
      GlobalScope.launch {
          dao.insert(Student(1,"Nilesh","teji"));
-         a=dao.get().get(0);
-         Log.d("Room", "onCreate: "+a.name+" "+a.lastName); 
+
+
 
      }
 
@@ -52,6 +62,10 @@ class MainActivity : AppCompatActivity() {
 
 
 
+    }
+
+    fun show(student: Student){
+        Toast.makeText(baseContext,student.name, LENGTH_LONG).show();
     }
 
 
