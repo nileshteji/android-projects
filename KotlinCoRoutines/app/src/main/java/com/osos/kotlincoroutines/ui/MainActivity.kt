@@ -1,4 +1,4 @@
-package com.osos.kotlincoroutines
+package com.osos.kotlincoroutines.ui
 
 import android.os.Bundle
 import android.util.Log
@@ -6,6 +6,7 @@ import android.widget.Toast
 import android.widget.Toast.LENGTH_LONG
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
+import com.osos.kotlincoroutines.R
 import kotlinx.coroutines.*
 
 class MainActivity : AppCompatActivity() {
