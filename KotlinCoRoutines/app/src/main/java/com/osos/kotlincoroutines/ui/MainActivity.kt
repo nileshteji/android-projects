@@ -23,10 +23,18 @@ class MainActivity : AppCompatActivity() {
         // withContext to change the thread of the coroutine
 
 
+        timeOut()
+
+
     }
 
 
+
+
+
+
     fun timeOut() {
+
         lifecycleScope.launch {
             val job = withTimeoutOrNull(2000) {
                 timeOutOne();
@@ -47,6 +55,7 @@ class MainActivity : AppCompatActivity() {
 
     suspend fun timeOutOne() {
         delay(1000)
+
     }
 
 

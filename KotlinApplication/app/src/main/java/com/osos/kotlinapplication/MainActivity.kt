@@ -11,6 +11,7 @@ import android.widget.Toast.LENGTH_LONG
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProviders
 import com.osos.kotlinapplication.databinding.ActivityMainBinding
 
 import com.osos.kotlinapplication.db.DataBaseStudent
@@ -23,36 +24,24 @@ import kotlin.math.log
 class MainActivity : AppCompatActivity() {
 
 
-    lateinit var main: ActivityMainBinding;
-    lateinit var data:DataBaseStudent;
-    lateinit var dao: StudentDao;
-    lateinit var a:Student;
-    lateinit var sharedPreferences:SharedPreferences;
-    lateinit var edit:SharedPreferences.Editor;
+
+
 
 
 
     @SuppressLint("WrongConstant", "CommitPrefEdits")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        main=ActivityMainBinding.inflate(layoutInflater)
-        setContentView(main.root)
-        data= DataBaseStudent.get(applicationContext)!!
-        dao=data!!.getDao();
-        sharedPreferences=getSharedPreferences("nilesh", Context.MODE_APPEND);
-        edit=sharedPreferences.edit();
+        val mainBinding:ActivityMainBinding= ActivityMainBinding.inflate(layoutInflater);
+        setContentView(mainBinding.root)
+        val nileshViewModel=ViewModelProvider(this@MainActivity,nileshFactory("Nilesh Teji is Setting"))
+            .get(NileshViewModel::class.java)
 
 
 
-
-
-
-     GlobalScope.launch {
-         dao.insert(Student(1,"Nilesh","teji"));
-
-
-
-     }
+        nileshViewModel.getUser().observe(this, Observer {
+            nilesh.text=it
+        })
 
 
 
@@ -64,9 +53,6 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun show(student: Student){
-        Toast.makeText(baseContext,student.name, LENGTH_LONG).show();
-    }
 
 
     }
