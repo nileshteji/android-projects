@@ -11,7 +11,7 @@ class MyItemTouch(on:OnClickRecycler):ItemTouchHelper.SimpleCallback(0,ItemTouch
 
     override fun getMovementFlags( recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder
     ): Int {
-        return makeMovementFlags(0,ItemTouchHelper.RIGHT);
+        return makeMovementFlags(0,ItemTouchHelper.RIGHT or ItemTouchHelper.LEFT);
     }
 
     override fun onMove(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder, target: RecyclerView.ViewHolder): Boolean {
@@ -19,10 +19,11 @@ class MyItemTouch(on:OnClickRecycler):ItemTouchHelper.SimpleCallback(0,ItemTouch
     }
 
     override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
-        if(direction==ItemTouchHelper.RIGHT){
+        if(direction==ItemTouchHelper.RIGHT || direction==ItemTouchHelper.LEFT){
         //  mainActivity.Delete(viewHolder.adapterPosition)
             onClick.Delete(viewHolder.adapterPosition)
        }
+
 
     }
 }
