@@ -5,7 +5,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.osos.githubfollowers.MainActivity
 import com.osos.githubfollowers.clickListeners.OnClickRecycler
 
-class MyItemTouch(on:OnClickRecycler):ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.RIGHT){
+class MyItemTouch(on:OnClickRecycler):ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.RIGHT or ItemTouchHelper.LEFT){
 
     var onClick=on;
 
