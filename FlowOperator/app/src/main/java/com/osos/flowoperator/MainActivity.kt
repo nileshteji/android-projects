@@ -19,24 +19,34 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-           setUpFlows()
-
-
-        Observable.just("Nilesh","Teji","Taheem","Singh","Hi")
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe({},{},{})
-
-
-        CoroutineScope(Dispatchers.IO).launch {
-           flow.collect {
-               
-           }
-        }
+           //setUpFlows()
+//
+//
+//        Observable.just("Nilesh","Teji","Taheem","Singh","Hi")
+//                .subscribeOn(Schedulers.io())
+//                .observeOn(AndroidSchedulers.mainThread())
+//                .subscribe({},{},{})
+//
+//
+//        CoroutineScope(Dispatchers.IO).launch {
+//           flow.collect {
+//
+//           }
+//        }
 
         val int=System.currentTimeMillis()
         CoroutineScope(Dispatchers.IO).launch {
 
+          val time=  measureTimeMillis {
+                launch {
+                    void(1)
+                }.join()
+                launch {
+                    void2(2)
+                }.join()
+            }
+
+            Log.d(TAG, "onCreate: $time")
 
 
         }.invokeOnCompletion {
@@ -47,14 +57,14 @@ class MainActivity : AppCompatActivity() {
 
 
     }
-    suspend fun void(a:Int):String {
+    suspend fun void(a:Int){
         delay(3000)
 
-      return "void: Done Job $a"
+        Log.d(TAG, "void: Done Job $a")
     }
-    suspend fun void2(a:Int):String {
+    suspend fun void2(a:Int) {
         delay(3000)
-       return "void: Done Job $a"
+        Log.d(TAG,"Done Job $a")
     }
 
     fun setUpFlows(): Unit {
