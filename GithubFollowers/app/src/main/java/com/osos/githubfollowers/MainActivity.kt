@@ -31,6 +31,7 @@ class MainActivity : AppCompatActivity(), OnClickRecycler {
         lifecycleScope.launch(Dispatchers.IO) {
 
             async {
+                
                 var response = api.create(profileRequest::class.java).getName(Constants.user)
                 withContext(Dispatchers.Main) {
                     Picasso.get().load(response.avatar_url).into(imageView)
@@ -43,12 +44,14 @@ class MainActivity : AppCompatActivity(), OnClickRecycler {
             }
 
 
+            // this runs both the job async which mean they run simentalously not one after one
             async {
 
 
                 var job = withTimeoutOrNull(1500) {
                     var response: ArrayList<Followers> =
                         api.create(profileRequest::class.java).getFollowers(Constants.user)
+
                     adapter = Adapter(this@MainActivity, response)
                     linearLayoutManager = LinearLayoutManager(this@MainActivity);
                     linearLayoutManager.orientation = LinearLayoutManager.VERTICAL

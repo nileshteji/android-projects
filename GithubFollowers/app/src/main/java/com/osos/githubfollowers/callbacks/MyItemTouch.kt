@@ -5,9 +5,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.osos.githubfollowers.MainActivity
 import com.osos.githubfollowers.clickListeners.OnClickRecycler
 
-class MyItemTouch(on:OnClickRecycler):ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.RIGHT or ItemTouchHelper.LEFT){
+class MyItemTouch(mainActivity: MainActivity):ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.RIGHT or ItemTouchHelper.LEFT){
 
-    var onClick=on;
+    var mainActivity=mainActivity;
 
     override fun getMovementFlags( recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder
     ): Int {
@@ -21,7 +21,7 @@ class MyItemTouch(on:OnClickRecycler):ItemTouchHelper.SimpleCallback(0,ItemTouch
     override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
         if(direction==ItemTouchHelper.RIGHT || direction==ItemTouchHelper.LEFT){
         //  mainActivity.Delete(viewHolder.adapterPosition)
-            onClick.Delete(viewHolder.adapterPosition)
+            mainActivity.Delete(viewHolder.adapterPosition)
        }
 
 
