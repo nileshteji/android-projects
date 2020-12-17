@@ -3,72 +3,78 @@ package com.osos.flowoperator
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
+import io.reactivex.rxjava3.core.Observable
+import kotlinx.coroutines.CancellationException
+import kotlinx.coroutines.Runnable
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
-import kotlinx.coroutines.launch
+import java.io.IOException
 
 class MainActivity : AppCompatActivity() {
+    var a: String = "Nilesh Teji"
+    val TAG = "MainActivityLog"
     lateinit var flow: Flow<Int>
-    val TAG = "Main"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        text.setText("Nilesh")
-        //setUpFlows()
-//
-//
-//        Observable.just("Nilesh","Teji","Taheem","Singh","Hi")
-//                .subscribeOn(Schedulers.io())
-//                .observeOn(AndroidSchedulers.mainThread())
-//                .subscribe({},{},{})
-//
-//
-//        CoroutineScope(Dispatchers.IO).launch {
-//           flow.collect {
-//
-//           }
-//        }
 
-        val int = System.currentTimeMillis()
-        CoroutineScope(Dispatchers.IO).launch {
 
-            launch {
-                void(1)
-            }
-            launch {
-                void2(2)
-            }
-
-        }.invokeOnCompletion {
-            if (it == null) {
-                Log.d(TAG, "Time taken ${System.currentTimeMillis() - int}")
+        flow = kotlinx.coroutines.flow.flow {
+            for (i in 1 until 10 step 2) {
+                if (i == 3) {
+                    throw CancellationException()
+                }
+                emit(0)
             }
         }
 
 
     }
 
-    suspend fun void(a: Int) {
-        delay(3000)
-        Log.d(TAG, "void: Done Job $a")
+    suspend fun networkCallOne(): String {
+        delay(2000)
+        Log.d(TAG, "networkCallOne: Done with Network Call One")
+        return "Network Call One"
     }
 
-    suspend fun void2(a: Int) {
-        delay(3000)
-        Log.d(TAG, "Done Job $a")
+    suspend fun networkCallTwo(): String {
+        delay(2000)
+        Log.d(TAG, "networkCallTwo:Done with Network Call Two")
+        return "Network Call Two"
     }
 
-    fun setUpFlows(): Unit {
+    fun getObservable(i: Int): Observable<Int> {
+        return Observable.just(i);
+    }
 
-        flow = flow<Int> {
-            (0..10).forEach {
-                delay(100)
-                emit(it)
+    private fun doLongRunningTask(): Flow<Int> {
+        return flow {
+            
+            delay(2000)
+
+            val randomNumber = (0..2).random()
+
+            if (randomNumber == 0) {
+                Log.d(TAG, "doLongRunningTask: $randomNumber")
+                throw IOException()
+
+            } else if (randomNumber == 1) {
+                Log.d(TAG, "doLongRunningTask: $randomNumber")
+                throw IndexOutOfBoundsException()
             }
+
+            delay(2000)
+            emit(0)
         }
     }
+}
+
+
+class Thread : Runnable {
+    override fun run() {
+        TODO("Not yet implemented")
+    }
+
 }

@@ -20,24 +20,16 @@ import io.reactivex.rxjava3.disposables.Disposable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public class MainActivity extends AppCompatActivity {
-    final static String TAG="MainActivityLog";
+    final static String TAG = "MainActivityLog";
     TextView textView;
+    Button button;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        textView=findViewById(R.id.text)
         Log.d(TAG, "onCreate: ");
-
-
-        Observable.just(1,2,45,6).subscribeOn(Schedulers.computation()).observeOn(AndroidSchedulers.mainThread())
-                .subscribe(
-                        (d)-> {},
-                        (e)-> Log.d(TAG, "onCreate: e"),
-                        ()-> Log.d(TAG, "onCreate: Done"));
-
-
 
     }
 
@@ -51,12 +43,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         Log.d(TAG, "onResume: ");
-    }
-
-    @Override
-    protected void onPostResume() {
-        super.onPostResume();
-        Log.d(TAG, "onPostResume: ");
     }
 
     @Override

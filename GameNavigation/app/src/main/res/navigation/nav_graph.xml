@@ -2,37 +2,4 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph"
-    app:startDestination="@id/startFragment">
-
-    <fragment
-        android:id="@+id/startFragment"
-        android:name="com.osos.gamenavigation.StartFragment"
-        android:label="fragment_start"
-        tools:layout="@layout/fragment_start"
-        >
-        <action
-            android:id="@+id/action_startFragment_to_inGameFragment"
-            app:popExitAnim="@anim/slide_left"
-            app:popEnterAnim="@anim/slide_left"
-            app:destination="@id/inGameFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/inGameFragment"
-        android:name="com.osos.gamenavigation.InGameFragment"
-        android:label="fragment_in_game"
-        tools:layout="@layout/fragment_in_game" >
-        <action
-            android:id="@+id/action_inGameFragment_to_endGame2"
-            app:destination="@id/endGame2" />
-    </fragment>
-    <fragment
-        android:id="@+id/endGame2"
-        android:name="com.osos.gamenavigation.EndGame"
-        android:label="fragment_end_game"
-        tools:layout="@layout/fragment_end_game" >
-        <action
-            android:id="@+id/action_endGame2_to_startFragment"
-            app:destination="@id/startFragment" />
-    </fragment>
-</navigation>
+    android:id="@+id/nav_graph" />
