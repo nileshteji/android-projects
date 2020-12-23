@@ -1,12 +1,14 @@
 package com.osos.hiltapplication
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import dagger.Module
+import dagger.Provides
+import dagger.hilt.InstallIn
 import dagger.hilt.android.AndroidEntryPoint
-import dagger.hilt.android.scopes.ActivityRetainedScoped
+import dagger.hilt.android.components.ApplicationComponent
 import javax.inject.Inject
-import javax.inject.Singleton
+import javax.inject.Qualifier
 
 
 @AndroidEntryPoint
@@ -15,39 +17,81 @@ class MainActivity : AppCompatActivity() {
     private val TAG = "MainActivity"
 
     @Inject
-    lateinit var someClass: SomeClass
+    lateinit var checkingHilt: CheckingHilt
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        Log.d(TAG, "onCreate: ${someClass.doThing()}")
-
-    }
-}
-
-
-
-class SomeClass @Inject constructor(private val getDependency: getDependency ) {
-     fun doThing() = "Look I did Thing ${getDependency.get()}"
-}
-
-
-
-class serviceIMP @Inject constructor(): service {
-    override fun doThing(): String {
-        TODO("Not yet implemented")
+        println(checkingHilt.getImplementationOne())
+        println(checkingHilt.getImplementationTwo())
     }
 
+
 }
+
+
+class CheckingHilt @Inject constructor(
+        @ImplOne private val serviceImplementationOne: service,
+        @ImplTwo private val serviceImplementationTwo: service,
+) {
+
+    fun getImplementationOne(): String {
+        return serviceImplementationOne.provideThing()
+    }
+
+    fun getImplementationTwo(): String {
+        return serviceImplementationTwo.provideThing()
+    }
+
+}
+
 
 interface service {
-    fun doThing():String
+    fun provideThing(): String
 }
 
 
-class getDependency @Inject constructor(){
-    fun get() =" Nilesh Teji"
+class ServiceImplementationOne @Inject constructor() : service {
+    override fun provideThing(): String {
+        return "A Thing One"
+    }
+}
+
+class ServiceImplementationTwo @Inject constructor() : service {
+    override fun provideThing(): String {
+        return " A Thing Two"
+    }
+
 }
 
 
+@InstallIn(ApplicationComponent::class)
+@Module
+class MyModule {
+
+    @ImplOne
+    @Provides
+    fun getServiceImplementationOne(): service {
+        return ServiceImplementationOne()
+    }
+
+    @ImplTwo
+    @Provides
+    fun getServiceImplementationTwo(): service {
+        return ServiceImplementationTwo()
+    }
+
+
+}
+
+
+@Qualifier
+@Retention(AnnotationRetention.BINARY)
+annotation class ImplOne
+
+
+
+@Qualifier
+@Retention(AnnotationRetention.BINARY)
+annotation class ImplTwo
 
