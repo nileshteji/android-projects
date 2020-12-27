@@ -14,8 +14,6 @@ import javax.inject.Qualifier
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
-    private val TAG = "MainActivity"
-
     @Inject
     lateinit var checkingHilt: CheckingHilt
 
@@ -25,8 +23,6 @@ class MainActivity : AppCompatActivity() {
         println(checkingHilt.getImplementationOne())
         println(checkingHilt.getImplementationTwo())
     }
-
-
 }
 
 
@@ -46,9 +42,7 @@ class CheckingHilt @Inject constructor(
 }
 
 
-interface service {
-    fun provideThing(): String
-}
+interface service { fun provideThing(): String }
 
 
 class ServiceImplementationOne @Inject constructor() : service {
@@ -61,7 +55,6 @@ class ServiceImplementationTwo @Inject constructor() : service {
     override fun provideThing(): String {
         return " A Thing Two"
     }
-
 }
 
 
