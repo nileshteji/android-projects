@@ -9,11 +9,12 @@ import androidx.recyclerview.widget.RecyclerView
 class CustomListAdapter : ListAdapter<Int, CustomListAdapter.ViewHolder>(object : DiffUtil.ItemCallback<Int>() {
 
     override fun areItemsTheSame(oldItem: Int, newItem: Int): Boolean {
-        TODO("Not yet implemented")
+        return oldItem == newItem
+
     }
 
     override fun areContentsTheSame(oldItem: Int, newItem: Int): Boolean {
-        TODO("Not yet implemented")
+        return oldItem == newItem
     }
 
 }) {

@@ -6,6 +6,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.AndroidEntryPoint
+import dagger.hilt.android.components.ActivityComponent
 import dagger.hilt.android.components.ApplicationComponent
 import javax.inject.Inject
 import javax.inject.Qualifier
@@ -62,9 +63,13 @@ class ServiceImplementationTwo @Inject constructor() : service {
 @Module
 class MyModule {
 
+
+    @Provides
+    fun getString() : String = "Nilesh Teji"
+
     @ImplOne
     @Provides
-    fun getServiceImplementationOne(): service {
+    fun getServiceImplementationOne(a : String): service {
         return ServiceImplementationOne()
     }
 
