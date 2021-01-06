@@ -69,7 +69,10 @@ public class MainActivity extends AppCompatActivity {
                 });
 
 
-        // this example of map 
+
+        
+
+        // this example of map
         observable.fromIterable(list).map(new Function<String, Object>() {
             @Override
             public String apply(String s) throws Throwable {

@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "291762570017",
+    "firebase_url": "https://fcloudm-c5dd4.firebaseio.com",
+    "project_id": "fcloudm-c5dd4",
+    "storage_bucket": "fcloudm-c5dd4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:291762570017:android:ab588d64089c3c03f4b460",
+        "android_client_info": {
+          "package_name": "com.osos.fcm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "291762570017-f3vgvm388aj6k75bv39etfnggpqartsf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPW-rxFFPWQfqWQK0Jhnx1S6upNQpT4bg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "291762570017-f3vgvm388aj6k75bv39etfnggpqartsf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:291762570017:android:a8b429fd4e341b8df4b460",
+        "android_client_info": {
+          "package_name": "com.osos.roomapi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "291762570017-f3vgvm388aj6k75bv39etfnggpqartsf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPW-rxFFPWQfqWQK0Jhnx1S6upNQpT4bg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "291762570017-f3vgvm388aj6k75bv39etfnggpqartsf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

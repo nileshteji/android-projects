@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.osos.kotlincoroutines.R
 import kotlinx.coroutines.*
+import kotlinx.coroutines.channels.Channel
 
 class MainActivity : AppCompatActivity() {
     val TAG = "MainActivity"
@@ -23,67 +24,76 @@ class MainActivity : AppCompatActivity() {
         // withContext to change the thread of the coroutine
 
 
-        timeOut()
+        val channel = Channel<String>()
 
+        lifecycleScope.launch(Dispatchers.IO) {
+            channel.send("Nilesh")
+            channel.send("Teji")
+            channel.send("is")
+            channel.send("in")
+            channel.send("the")
+            channel.send("channel")
+        }
 
-    }
-
-
-
-
-
-
-    fun timeOut() {
-
-        lifecycleScope.launch {
-            val job = withTimeoutOrNull(2000) {
-                timeOutOne();
-            }
-
-            when (job) {
-                null -> withContext(Dispatchers.Main) {
-                    Toast.makeText(this@MainActivity, "Time Out", LENGTH_LONG).show()
-                }
-                else -> withContext(Dispatchers.Main) {
-                    Toast.makeText(this@MainActivity, "CoRoutine Done", LENGTH_LONG).show()
-                }
-            }
+        lifecycleScope.launch(Dispatchers.IO) {
+           repeat(6){
+             println(channel.receive())
+           }
         }
 
     }
 
 
-    suspend fun timeOutOne() {
-        delay(1000)
-
-    }
 
 
-    fun exceptionHandle() {
-        var handler: CoroutineExceptionHandler = CoroutineExceptionHandler { _, exception ->
-            println("Exceptions is Thrown")
-        }
-
-        CoroutineScope(Dispatchers.IO).launch(handler) {
-            //JOB----1
-
-            val JOB = launch {
-                var nilesh: String = network2();
-                Log.d(TAG, "main:$nilesh ")
-            }
-
-            JOB.invokeOnCompletion {
-                when (it) {
-                    null -> Log.d(TAG, "main: JOB Done")
-                    else -> Log.d(TAG, "main: NO SuccesFull")
-                }
-            }
-        }
-    }
 
 
-    suspend fun network2(): String {
-        delay(3000)
-        return "Nilesh Teji"
-    }
+//    fun timeOut() {
+//
+//        lifecycleScope.launch {
+//            val job = withTimeoutOrNull(2000) {
+//                timeOutOne();
+//            }
+//
+//            when (job) {
+//                null -> withContext(Dispatchers.Main) {
+//                    Toast.makeText(this@MainActivity, "Time Out", LENGTH_LONG).show()
+//                }
+//                else -> withContext(Dispatchers.Main) {
+//                    Toast.makeText(this@MainActivity, "CoRoutine Done", LENGTH_LONG).show()
+//                }
+//            }
+//        }
+//
+//    }
+//
+//
+//    suspend fun timeOutOne() {
+//        delay(1000)
+//
+//    }
+//
+//
+//    fun exceptionHandle() {
+//        var handler: CoroutineExceptionHandler = CoroutineExceptionHandler { _, exception ->
+//            println("Exceptions is Thrown")
+//        }
+//
+//        CoroutineScope(Dispatchers.IO).launch(handler) {
+//            //JOB----1
+//
+//            val JOB = withTimeoutOrNull(2000){
+//                var nilesh: String = network2();
+//                Log.d(TAG, "main:$nilesh ")
+//            }
+//
+//
+//        }
+//    }
+//
+//
+//    suspend fun network2(): String {
+//        delay(3000)
+//        return "Nilesh Teji"
+//    }
 }
