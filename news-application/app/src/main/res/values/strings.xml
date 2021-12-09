@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">SquareBoat Application</string>
+    <string name="api_key">db0e3d8da66c404e9d17cda1eb63d3be</string>
+    <string name="status_header">My News</string>
+    <string name="india">India</string>
+    <string name="brazil">Brazil</string>
+    <string name="usa">USA</string>
+    <string name="argetina">Argentina</string>
+    <string name="australia">Australia</string>
+    <string name="china">China</string>
+    <string name="Pakistan">Pakistan</string>
+    <string name="location_placeholder">Location</string>
+    <string name="headLines">Top HeadLines</string>
+    <string name="filter_placeholder">Newest</string>
+    <string name="fullstory">See Full Story</string>
+    <string-array name="filter_array">
+        <item> Newest </item>
+        <item> Popular </item>
+        <item> Relevant </item>
+    </string-array>
+    <string name="choose_loction">Choose Your Location</string>
+    <string name="choose_sources">Filter By Sources</string>
+    <string name="content_placeholder">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys
+        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+        scrambled it to make a type specimen book. It has survived not only five centuries</string>
+
+    <!--Id;s is being used in the key-->
+
+
+    <string name="timesofIndiaid">the-times-of-india</string>
+    <string name="timesofindia">Times of India</string>
+
+    <string name="googlenewsID">google-news</string>
+    <string name="googlenews">Google New</string>
+
+    <string name="abpid">abp-news</string>
+    <string name="ABP">ABP</string>
+
+    <string name="bbcID">bbc.co.uk</string>
+    <string name="bbc">BBC</string>
+
+    <string name="nextWebID">thenextweb</string>
+    <string name="nextWeb">Next Web</string>
+
+    <string name="techcrunchID">techcrunch</string>
+    <string name="techcrunch">Tech Crunch</string>
+
+    <string name="engadgetID">engadget</string>
+    <string name="engadget">Engadget</string>
+
+
+</resources>

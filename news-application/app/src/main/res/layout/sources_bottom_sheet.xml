@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/design_bottom_sheet"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/modal_sheet"
+    android:elevation="20dp">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_right"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/hel_bold"
+        android:text="@string/choose_sources"
+        android:textColor="@color/secondary_color"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="@dimen/margin_right"
+        android:background="@color/secondary_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+
+    <CheckBox
+        android:id="@+id/engadget"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_gravity="start"
+        android:layout_margin="@dimen/margin_right"
+        android:fontFamily="@font/hel"
+        android:gravity="right"
+        android:layoutDirection="rtl"
+        android:text="@string/engadget"
+        android:textAlignment="textStart"
+        android:textColor="@color/secondary_color"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/applyfilter"
+        app:layout_constraintTop_toBottomOf="@+id/techcrunch"
+        tools:layout_editor_absoluteX="16dp">
+
+    </CheckBox>
+
+    <CheckBox
+        android:id="@+id/techcrunch"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_gravity="start"
+        android:layout_margin="@dimen/margin_right"
+        android:fontFamily="@font/hel"
+        android:gravity="right"
+        android:layoutDirection="rtl"
+        android:text="@string/techcrunch"
+        android:textAlignment="textStart"
+        android:textColor="@color/secondary_color"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/engadget"
+        app:layout_constraintTop_toBottomOf="@+id/nextweb"
+        tools:layout_editor_absoluteX="8dp">
+
+    </CheckBox>
+
+    <CheckBox
+        android:id="@+id/nextweb"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_gravity="start"
+        android:layout_margin="@dimen/margin_right"
+        android:fontFamily="@font/hel"
+        android:gravity="right"
+        android:layoutDirection="rtl"
+        android:text="@string/nextWeb"
+        android:textAlignment="textStart"
+        android:textColor="@color/secondary_color"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/techcrunch"
+        app:layout_constraintTop_toBottomOf="@+id/bbc"
+        tools:layout_editor_absoluteX="16dp">
+
+    </CheckBox>
+
+    <CheckBox
+        android:id="@+id/bbc"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_gravity="start"
+        android:layout_margin="@dimen/margin_right"
+        android:fontFamily="@font/hel"
+        android:gravity="right"
+        android:layoutDirection="rtl"
+        android:text="@string/bbc"
+        android:textAlignment="textStart"
+        android:textColor="@color/secondary_color"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/nextweb"
+        app:layout_constraintTop_toBottomOf="@+id/abpnews"
+        tools:layout_editor_absoluteX="8dp">
+
+    </CheckBox>
+
+    <CheckBox
+        android:id="@+id/timesofindia"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_gravity="start"
+        android:layout_margin="@dimen/margin_right"
+        android:fontFamily="@font/hel"
+        android:gravity="right"
+        android:layoutDirection="rtl"
+        android:text="@string/timesofindia"
+        android:textAlignment="textStart"
+        android:textColor="@color/secondary_color"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/googlenews"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:layout_editor_absoluteX="8dp">
+
+    </CheckBox>
+
+    <CheckBox
+        android:id="@+id/googlenews"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_gravity="start"
+        android:layout_margin="@dimen/margin_right"
+        android:fontFamily="@font/hel"
+        android:gravity="right"
+        android:layoutDirection="rtl"
+        android:text="@string/googlenews"
+        android:textAlignment="textStart"
+        android:textColor="@color/secondary_color"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/abpnews"
+        app:layout_constraintTop_toBottomOf="@+id/timesofindia"
+        tools:layout_editor_absoluteX="8dp">
+
+    </CheckBox>
+
+    <CheckBox
+        android:id="@+id/abpnews"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_gravity="start"
+        android:layout_margin="@dimen/margin_right"
+        android:fontFamily="@font/hel"
+        android:gravity="right"
+        android:layoutDirection="rtl"
+        android:text="@string/ABP"
+        android:textAlignment="textStart"
+        android:textColor="@color/secondary_color"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/bbc"
+        app:layout_constraintTop_toBottomOf="@+id/googlenews"
+        tools:layout_editor_absoluteX="0dp"/>
+
+    <Button
+        android:id="@+id/applyfilter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_right"
+        android:text="Apply"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+
+    </Button>
+</androidx.constraintlayout.widget.ConstraintLayout>

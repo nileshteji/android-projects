@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content
+"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_right"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/hel_bold"
+            android:text="@string/choose_loction"
+            android:textColor="@color/secondary_color"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/view"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="@dimen/margin_right"
+            android:background="@color/secondary_color"
+            app:layout_constraintBottom_toTopOf="@+id/radioGroup3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_right"
+            app:layout_constraintBottom_toTopOf="@+id/apply"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view">
+
+            <RadioButton
+                android:id="@+id/brazil"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_gravity="start"
+                android:layout_margin="@dimen/margin_right"
+                android:fontFamily="@font/hel"
+                android:gravity="right"
+                android:layoutDirection="rtl"
+                android:text="@string/brazil"
+                android:textAlignment="textStart"
+                android:textColor="@color/secondary_color"
+                android:textSize="16sp">
+
+            </RadioButton>
+
+            <RadioButton
+                android:id="@+id/usa"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_gravity="start"
+                android:layout_margin="@dimen/margin_right"
+                android:fontFamily="@font/hel"
+                android:gravity="right"
+                android:layoutDirection="rtl"
+                android:text="@string/usa"
+                android:textAlignment="textStart"
+                android:textColor="@color/secondary_color"
+                android:textSize="16sp">
+
+            </RadioButton>
+
+            <RadioButton
+                android:id="@+id/india"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_gravity="start"
+                android:layout_margin="@dimen/margin_right"
+                android:fontFamily="@font/hel"
+                android:gravity="right"
+                android:layoutDirection="rtl"
+                android:text="@string/india"
+                android:textAlignment="textStart"
+                android:textColor="@color/secondary_color"
+                android:textSize="16sp">
+
+            </RadioButton>
+
+            <RadioButton
+                android:id="@+id/argetina"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_gravity="start"
+                android:layout_margin="@dimen/margin_right"
+                android:fontFamily="@font/hel"
+                android:gravity="right"
+                android:layoutDirection="rtl"
+                android:text="@string/argetina"
+                android:textAlignment="textStart"
+                android:textColor="@color/secondary_color"
+                android:textSize="16sp">
+
+            </RadioButton>
+
+            <RadioButton
+                android:id="@+id/china"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_gravity="start"
+                android:layout_margin="@dimen/margin_right"
+                android:fontFamily="@font/hel"
+                android:gravity="right"
+                android:layoutDirection="rtl"
+                android:text="@string/china"
+                android:textAlignment="textStart"
+                android:textColor="@color/secondary_color"
+                android:textSize="16sp">
+
+            </RadioButton>
+
+            <RadioButton
+                android:id="@+id/aus"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_gravity="start"
+                android:layout_margin="@dimen/margin_right"
+                android:fontFamily="@font/hel"
+                android:gravity="right"
+                android:layoutDirection="rtl"
+                android:text="@string/australia"
+                android:textAlignment="textStart"
+                android:textColor="@color/secondary_color"
+                android:textSize="16sp">
+
+            </RadioButton>
+
+            <RadioButton
+                android:id="@+id/pakistan"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_gravity="start"
+                android:layout_margin="@dimen/margin_right"
+                android:fontFamily="@font/hel"
+                android:gravity="right"
+                android:layoutDirection="rtl"
+                android:text="@string/Pakistan"
+                android:textAlignment="textStart"
+                android:textColor="@color/secondary_color"
+                android:textSize="16sp">
+
+            </RadioButton>
+
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/apply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_right"
+            android:text="Apply"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup3">
+
+        </Button>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
