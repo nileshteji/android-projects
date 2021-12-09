@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">SliceAssignment</string>
+    <string name="splash_screen_text">TW Search Client</string>
+    <string name="button_search_Text">Search</string>
+    <string name="example_text_Search">Eg. Avengers Endgame</string>
+    <string name="placeholder_like">0</string>
+    <string name="placeholder_retweet">345660</string>
+    <string name="placeholder_twitter_username">Nilesh Teji</string>
+    <string name="placeholder_twitter_handle">kumar.nilesh023</string>
+    <string name="done_search">Done Searching</string>
+    <string name="placeholder_tweet_content">Soul Stone can only be Exachnged .A Soul for Another Soul.Soul of the person whom you loved #RIPGamora #RIPNatalie</string>
+    <string name="welcome">Welcome</string>
+    <string name="search_box_hint">Search Text</string>
+
+
+
+</resources>

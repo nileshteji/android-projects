@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="margin_top_splash">16dp</dimen>
+
+
+    <!--- search activity-->
+    <dimen name="margin_top_search">16dp</dimen>
+    <dimen name="margin_left_search">16dp</dimen>
+    <dimen name="margin_right_search">16dp</dimen>
+    <dimen name="margin_bottom_search">16dp</dimen>
+
+    <dimen name="search_cardView_height">80dp</dimen>
+
+
+    <!--text input layout-->
+    <dimen name="text_input_margin">8dp</dimen>
+
+
+    <!--button search-->
+    <dimen name="button_search_margin_right">8dp</dimen>
+    <dimen name="button_search_margin_top">8dp</dimen>
+    <dimen name="button_search_margin_bottom">8dp</dimen>
+
+
+
+    <!--- search logo-->
+    <dimen name="search_logo_blue_margin_top">16dp</dimen>
+    <dimen name="search_logo_height">150dp</dimen>
+
+
+    <!---tweet list-->
+    <dimen name="heart_margin_right">16dp</dimen>
+    <dimen name="heart_margin_top">16dp</dimen>
+    <dimen name="heart_width">24dp</dimen>
+    <dimen name="heart_height">24dp</dimen>
+    <dimen name="margin_twitter_name_left">8dp</dimen>
+    <dimen name="like_text_right_margin">8dp</dimen>
+    <dimen name="twitter_name_text_size">20sp</dimen>
+    <dimen name="margin_start">16dp</dimen>
+    <dimen name="margin_end">16dp</dimen>
+</resources>
