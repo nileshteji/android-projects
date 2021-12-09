@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">AppDeskService</string>
+    <string name="hint_userName">Enter Username</string>
+    <string name="title_activity_main">MainActivity</string>
+
+
+    <string name="title_home">Current</string>
+    <string name="date">Date</string>
+    <string name="title_dashboard">7 Day Report</string>
+    <string name="title_notifications">Settings</string>
+    <string name="user_name">User Name</string>
+    <string name="temperature_placeholder">Temperature Unit</string>
+    <string name="celsius">Celsius</string>
+    <string name="fahrenit">Fahrenit</string>
+    <string name="current_temparature">Current Temparature</string>
+    <string name="_36_c">°</string>
+    <string name="placeholder">PlaceHolder</string>
+    <string name="statistics">Statistics</string>
+    <string name="feels_like">Feels Like</string>
+    <string name="max_temp">Max Temp</string>
+    <string name="min_temp">Min Temp</string>
+    <string name="text">Since the API used in this module was paid one and i also raised the concern.History Bulk is a paid API.You can also
+    cross check the Open Weather Website .Thank You.
+    </string>
+    <string name="submit">SUBMIT</string>
+
+
+    <string-array name="cities">
+
+        <item> </item>
+        <item>Delhi</item>
+        <item>Mumbai</item>
+        <item>Noida</item>
+    </string-array>
+</resources>
