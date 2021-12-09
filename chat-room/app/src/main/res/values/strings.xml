@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Eduwaive</string>
+    <string name="firebase">
+        I Couldn\'t get your question what we mean by catching a Firebase
+        Push Notification.But What i can get is that you were talking about
+        Firebase Cloud messaging and App messaging
+    </string>
+</resources>

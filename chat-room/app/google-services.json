@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "446602385687",
+    "firebase_url": "https://fir-14ca3.firebaseio.com",
+    "project_id": "fir-14ca3",
+    "storage_bucket": "fir-14ca3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:446602385687:android:bf22bbda7a613fd3d67f52",
+        "android_client_info": {
+          "package_name": "com.osos.eduwaive"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "446602385687-tesmibfbcl8o2urs9qs6v7o7ni0u6bob.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.osos.eduwaive",
+            "certificate_hash": "ea25aa8e163fde98da87b82a3afb1ab574c565d6"
+          }
+        },
+        {
+          "client_id": "446602385687-depl5rvdih26nl9pte7qo53i98p7nk3j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBV7b-m7FgRYPF6ZGnTwONmQuAG2lo3oHg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "446602385687-phln8fstqj2paapejibbbkpjnkrurv22.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
