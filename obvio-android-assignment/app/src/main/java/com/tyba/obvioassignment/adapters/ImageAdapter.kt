@@ -14,40 +14,40 @@ class ImageAdapter constructor(var activity: HomeActivity, var listData: List<Js
 
     RecyclerView.Adapter<ImageAdapter.Holder>() {
 
-    class Holder(val _activity: HomeActivity, val itemView: View) :
-        RecyclerView.ViewHolder(itemView) {
+  class Holder(val _activity: HomeActivity, val itemView: View) :
+      RecyclerView.ViewHolder(itemView) {
 
-        fun bind(data: JsonData) {
-
-
-            itemView.bookMarkButton.isChecked = data.bookMark
-            itemView.text_title.text = data.title
-            itemView.date.text = data.date;
-            Picasso.get().load(data.url).error(R.drawable.ic_launcher_background)
-                .into(itemView.image)
-
-            itemView.setOnClickListener{
-                _activity.click(adapterPosition)
-            }
-
-            itemView.bookMarkButton.setOnCheckedChangeListener{ _,isChecked ->
-                _activity.bookMark(adapterPosition,isChecked)
-            }
-        }
+    fun bind(data: JsonData) {
 
 
+      itemView.bookMarkButton.isChecked = data.bookMark
+      itemView.text_title.text = data.title
+      itemView.date.text = data.date
+      Picasso.get().load(data.url).error(R.drawable.ic_launcher_background)
+          .into(itemView.image)
+
+      itemView.setOnClickListener {
+        _activity.click(adapterPosition)
+      }
+
+      itemView.bookMarkButton.setOnCheckedChangeListener { _, isChecked ->
+        _activity.bookMark(adapterPosition, isChecked)
+      }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
-        val rootView: View = LayoutInflater.from(parent.context)
-            .inflate(R.layout.recycler_view, parent, false)
 
-        return Holder(activity, rootView)
-    }
+  }
 
-    override fun onBindViewHolder(holder: Holder, position: Int) {
-        holder.bind(listData[position])
-    }
+  override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
+    val rootView: View = LayoutInflater.from(parent.context)
+        .inflate(R.layout.recycler_view, parent, false)
 
-    override fun getItemCount(): Int = listData.size
+    return Holder(activity, rootView)
+  }
+
+  override fun onBindViewHolder(holder: Holder, position: Int) {
+    holder.bind(listData[position])
+  }
+
+  override fun getItemCount(): Int = listData.size
 }

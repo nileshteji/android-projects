@@ -15,6 +15,7 @@ class DetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
 
+
         jsonData = intent.getParcelableExtra<JsonData>("object")
 
         Log.d(TAG, "onCreate: ${jsonData}")
